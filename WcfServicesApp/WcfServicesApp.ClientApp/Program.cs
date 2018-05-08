@@ -2,6 +2,7 @@
 using System.IO;
 using System.Net;
 using System.Text;
+using System.Xml.Linq;
 
 namespace WcfServicesApp.ClientApp
 {
@@ -9,7 +10,14 @@ namespace WcfServicesApp.ClientApp
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.Title = "Output";
+
             CallRestfulService();
+            ClientReq.CallWebService();
+
+            Console.ReadKey();
+            Console.ReadLine();
         }
 
         static void CallTcpEndPoint()
@@ -18,6 +26,9 @@ namespace WcfServicesApp.ClientApp
             //var staffs = client.GetAllStaffs();
         }
 
+        /// <summary>
+        /// Call rest soap service
+        /// </summary>
         static void CallRestfulService()
         {
             WebRequest request = WebRequest.Create("http://localhost:8787/WcfServicesApp.WcfServiceLib/MainService/rest/staffs/4");
@@ -26,9 +37,8 @@ namespace WcfServicesApp.ClientApp
             StreamReader responseStream = new StreamReader(ws.GetResponseStream());
             string response = responseStream.ReadToEnd();
             responseStream.Close();
-
-            Console.WriteLine(response);
-            Console.ReadLine();
+            
+            Console.WriteLine(XDocument.Parse(response));
         }
     }
 }

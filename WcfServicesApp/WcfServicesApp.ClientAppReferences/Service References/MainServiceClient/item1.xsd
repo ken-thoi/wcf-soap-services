@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfServicesApp.WcfServiceLib.DataContract" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfServicesApp.WcfServiceLib.DataContract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfStaffDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StaffDto" nillable="true" type="tns:StaffDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStaffDto" nillable="true" type="tns:ArrayOfStaffDto" />
+  <xs:complexType name="StaffDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BirthOfDay" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Descriptions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StaffDto" nillable="true" type="tns:StaffDto" />
+</xs:schema>
