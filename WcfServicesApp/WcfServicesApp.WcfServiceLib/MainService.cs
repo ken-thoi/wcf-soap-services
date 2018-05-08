@@ -3,8 +3,8 @@ using System;
 using System.Collections.Generic;
 using WcfServicesApp.DataLayer;
 using WcfServicesApp.DataLayer.DataContext;
-using WcfServicesApp.WcfServiceLib.DataContract;
-using WcfServicesApp.WcfServiceLib.Helpers;
+using WcfServicesApp.DataLayer.DataContract;
+using WcfServicesApp.DataLayer.Helpers;
 
 namespace WcfServicesApp.WcfServiceLib
 {

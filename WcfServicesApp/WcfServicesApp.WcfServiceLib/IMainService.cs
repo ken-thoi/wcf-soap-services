@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.ServiceModel;
 using System.ServiceModel.Web;
-using WcfServicesApp.WcfServiceLib.DataContract;
+using WcfServicesApp.DataLayer.DataContract;
 
+/// <summary>
+/// a new WCF service library
+/// </summary>
 namespace WcfServicesApp.WcfServiceLib
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change 

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace WcfServicesApp.WcfServiceLib.DataContract
+namespace WcfServicesApp.DataLayer.DataContract
 {
     [DataContract]
     public class StaffDto

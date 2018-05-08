@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using AutoMapper;
 
-namespace WcfServicesApp.WcfServiceLib.Helpers
+namespace WcfServicesApp.DataLayer.Helpers
 {
     public static class MapperHelper
     {
