@@ -1,7 +1,6 @@
 ﻿using System.ServiceModel;
 using System.ServiceModel.Web;
 using WcfServicesApp.DataLayer.DataContract;
-using System;
 
 /// <summary>
 /// A new WCF service application
@@ -12,7 +11,11 @@ namespace WcfServicesApp.WcfServiceApplication
     public interface IKenService
     {
         [OperationContract]
-        [WebGet(UriTemplate = "/Employees", RequestFormat = WebMessageFormat.Xml, ResponseFormat = WebMessageFormat.Xml)]
+        [WebGet(UriTemplate = "/Staffs", RequestFormat = WebMessageFormat.Xml, ResponseFormat = WebMessageFormat.Xml)]
         StaffDto[] GetAllStaffs();
+
+        [OperationContract]
+        [WebGet(UriTemplate = "/StaffsByJson", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        StaffDto[] GetAllStaffsByJson();
     }
 }

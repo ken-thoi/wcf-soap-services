@@ -8,7 +8,7 @@ namespace WcfServicesApp.DataLayer
     {
         public List<Staff> GetAllStaffs()
         {
-            var context = new ServiceDbEntities();
+            var context = new WCFServicesContext();
             var staffs = context.Staffs.ToList();
             context.Dispose();
             return staffs;
@@ -16,7 +16,7 @@ namespace WcfServicesApp.DataLayer
 
         public Staff GetStaffById(int id)
         {
-            var context = new ServiceDbEntities();
+            var context = new WCFServicesContext();
             var staff = context.Staffs.SingleOrDefault(c => c.Id == id);
             context.Dispose();
             return staff;
@@ -24,7 +24,7 @@ namespace WcfServicesApp.DataLayer
 
         public Staff AddStaff(Staff staff)
         {
-            var context = new ServiceDbEntities();
+            var context = new WCFServicesContext();
             context.Staffs.Add(staff);
             context.SaveChanges();
             context.Dispose();

@@ -70,40 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataContext\ServiceDbContext.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ServiceDbContext.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataContext\ServiceDbContext.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ServiceDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataContext\ServiceDbContext.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ServiceDbContext.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DataContext\Staff.cs">
-      <DependentUpon>ServiceDbContext.tt</DependentUpon>
-    </Compile>
+    <Compile Include="DataContext\Staff.cs" />
+    <Compile Include="DataContext\WCFServicesContext.cs" />
     <Compile Include="DataContract\StaffDto.cs" />
     <Compile Include="Helpers\MapperHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaffService.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DataContext\ServiceDbContext.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ServiceDbContext.edmx</DependentUpon>
-      <LastGenOutput>ServiceDbContext.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DataContext\ServiceDbContext.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ServiceDbContext.edmx</DependentUpon>
-      <LastGenOutput>ServiceDbContext.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6">
@@ -121,18 +93,12 @@
     <None Include="App.Config">
       <SubType>Designer</SubType>
     </None>
-    <EntityDeploy Include="DataContext\ServiceDbContext.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ServiceDbContext.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="DataContext\ServiceDbContext.edmx.diagram">
-      <DependentUpon>ServiceDbContext.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -8,7 +8,9 @@ using WcfServicesApp.DataLayer.Helpers;
 
 namespace WcfServicesApp.WcfServiceLib
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "IMainService" in both code and config file together.
+    /// <summary>
+    /// NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "IMainService" in both code and config file together.
+    /// </summary>
     public class MainService : IMainService
     {
         public List<StaffDto> GetAllStaffs()
@@ -32,6 +34,5 @@ namespace WcfServicesApp.WcfServiceLib
             Console.WriteLine($"Add new staff success: {JsonConvert.SerializeObject(staff)}");
             return MapperHelper.Map<Staff, StaffDto>(staff);
         }
-
     }
 }

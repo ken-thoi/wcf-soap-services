@@ -22,5 +22,13 @@ namespace WcfServicesApp.WcfServiceApplication
             var result = MapperHelper.MapList<Staff, StaffDto>(staffs);
             return result.ToArray();
         }
+
+        public StaffDto[] GetAllStaffsByJson()
+        {
+            var staffs = new StaffService().GetAllStaffs();
+            Console.WriteLine($"Staffs all: {JsonConvert.SerializeObject(staffs)}");
+            var result = MapperHelper.MapList<Staff, StaffDto>(staffs);
+            return result.ToArray();
+        }
     }
 }
