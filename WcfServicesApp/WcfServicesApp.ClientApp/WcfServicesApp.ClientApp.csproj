@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientReq.cs" />
+    <Compile Include="DataTableHelper.cs" />
+    <Compile Include="ModelView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -52,7 +54,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\XML\EnvelopeBody.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\Debug\XML\EnvelopeBody_v2.xml" />
+    <Content Include="XML\DataSet_Schema.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="XML\EnvelopeBody.xml" />
+    <Content Include="XML\SOAP_RESPONSE.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

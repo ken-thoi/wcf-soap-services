@@ -1,6 +1,7 @@
 ﻿using System.ServiceModel;
 using System.ServiceModel.Web;
 using WcfServicesApp.DataLayer.DataContract;
+using System;
 
 /// <summary>
 /// A new WCF service application

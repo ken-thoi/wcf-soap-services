@@ -13,7 +13,7 @@ namespace WcfServicesApp.ClientApp
             Console.OutputEncoding = Encoding.UTF8;
             Console.Title = "Output";
 
-            CallRestfulService();
+            //CallRestfulService();
             ClientReq.CallWebService();
 
             Console.ReadKey();

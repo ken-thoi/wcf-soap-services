@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Net;
 using System.Reflection;
+using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -13,9 +16,10 @@ namespace WcfServicesApp.ClientApp
         {
             var _url = "http://dms-test.honda.com.vn/DMSSSA_Service.asmx?op=GUI_DON_HANG";
             var _action = "http://tempuri.org/GUI_DON_HANG";
+            var _host = "dms-test.honda.com.vn";
 
             XmlDocument soapEnvelopeXml = CreateSoapEnvelope();
-            HttpWebRequest webRequest = CreateWebRequest(_url, _action);
+            HttpWebRequest webRequest = CreateWebRequest(_host, _url, _action);
             InsertSoapEnvelopeIntoWebRequest(soapEnvelopeXml, webRequest);
 
             // begin async call to web request.
@@ -27,6 +31,7 @@ namespace WcfServicesApp.ClientApp
 
             // get the response from the completed web request.
             string soapResult;
+
             using (WebResponse webResponse = webRequest.EndGetResponse(asyncResult))
             {
                 using (var rd = new StreamReader(webResponse.GetResponseStream()))
@@ -43,13 +48,15 @@ namespace WcfServicesApp.ClientApp
         /// <param name="url"></param>
         /// <param name="action"></param>
         /// <returns></returns>
-        private static HttpWebRequest CreateWebRequest(string url, string action)
+        private static HttpWebRequest CreateWebRequest(string host, string url, string action)
         {
             var webRequest = (HttpWebRequest)WebRequest.Create(url);
-            webRequest.ContentType = "text/xml; charset=utf-8";
+            webRequest.Host = host;
             webRequest.Headers.Add("SOAPAction", action);
+            webRequest.ContentType = @"text/xml; charset=utf-8";
             webRequest.Accept = "text/xml";
             webRequest.Method = "POST";
+            webRequest.Accept = "*/*";
             return webRequest;
         }
 
