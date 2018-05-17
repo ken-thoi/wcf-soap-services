@@ -1,4 +1,6 @@
-﻿using System.ServiceModel;
+﻿using System.Collections.Generic;
+using System.ServiceModel;
+using System.ServiceModel.Syndication;
 using System.ServiceModel.Web;
 using WcfServicesApp.DataLayer.DataContract;
 
@@ -17,5 +19,10 @@ namespace WcfServicesApp.WcfServiceApplication
         [OperationContract]
         [WebGet(UriTemplate = "/StaffsByJson", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         StaffDto[] GetAllStaffsByJson();
+
+        [WebInvoke(Method = "GET", UriTemplate = "/search?format={format}")]
+        [ServiceKnownType(typeof(Atom10FeedFormatter))]
+        [ServiceKnownType(typeof(List<StaffDto>))]
+        Atom10FeedFormatter Search(string format);
     }
 }

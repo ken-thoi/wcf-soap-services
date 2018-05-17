@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 
 namespace WcfServicesApp.DataLayer.DataContract
 {
@@ -10,10 +11,18 @@ namespace WcfServicesApp.DataLayer.DataContract
         [DataMember]
         public string FullName { get; set; }
         [DataMember]
-        public System.DateTime BirthOfDay { get; set; }
+        public DateTime BirthOfDay { get; set; }
         [DataMember]
         public string Email { get; set; }
         [DataMember]
         public string Descriptions { get; set; }
+        [DataMember]
+        public string ExternalLink { get; set; }
+
+        [DataMember]
+        public DateTime? Modified { get; set; }
+
+        [DataMember]
+        public DateTime? Created { get; set; }
     }
 }

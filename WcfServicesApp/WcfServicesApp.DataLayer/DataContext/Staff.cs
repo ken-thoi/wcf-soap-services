@@ -1,10 +1,8 @@
 namespace WcfServicesApp.DataLayer.DataContext
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("Staff")]
     public partial class Staff
@@ -21,5 +19,12 @@ namespace WcfServicesApp.DataLayer.DataContext
 
         [StringLength(50)]
         public string Descriptions { get; set; }
+
+        [StringLength(50)]
+        public string ExternalLink { get; set; }
+
+        public DateTime? Modified { get; set; }
+
+        public DateTime? Created { get; set; }
     }
 }
